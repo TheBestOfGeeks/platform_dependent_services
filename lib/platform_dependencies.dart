@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:platform_dependent_services/models/message_model.dart';
 
 abstract interface class PlatformDependencies {
@@ -39,5 +41,5 @@ abstract interface class Messaging implements Service {
 abstract interface class Analytics extends Service {}
 
 abstract interface class Storage implements Service {
-  Future<void> exportLogs();
+  Future<void> exportPersonalLogs({required String id, required File file});
 }
