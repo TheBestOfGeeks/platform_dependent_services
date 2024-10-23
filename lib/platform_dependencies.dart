@@ -41,5 +41,6 @@ abstract interface class Messaging implements Service {
 abstract interface class Analytics extends Service {}
 
 abstract interface class Storage implements Service {
-  Future<void> exportPersonalLogs({required String id, required File file});
+  Future<void> initReference({required String id});
+  Future<void> exportPersonalLogs({required File file});
 }
