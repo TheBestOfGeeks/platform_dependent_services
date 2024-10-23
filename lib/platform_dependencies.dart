@@ -4,13 +4,13 @@ abstract interface class PlatformDependencies {
   final Core core;
   final Messaging messaging;
   final Analytics analytics;
-  final Storages storages;
+  final Storage storage;
 
   PlatformDependencies({
     required this.core,
     required this.messaging,
     required this.analytics,
-    required this.storages,
+    required this.storage,
   });
 }
 
@@ -20,7 +20,7 @@ abstract interface class Service {
   void dispose();
 }
 
-abstract interface class Core {}
+abstract interface class Core implements Service {}
 
 abstract interface class Messaging implements Service {
   Future<void> getToken();
@@ -38,4 +38,6 @@ abstract interface class Messaging implements Service {
 
 abstract interface class Analytics extends Service {}
 
-abstract interface class Storages {}
+abstract interface class Storage implements Service {
+  Future<void> exportLogs();
+}
