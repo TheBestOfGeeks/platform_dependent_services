@@ -36,6 +36,10 @@ abstract interface class Messaging implements Service {
   Stream<MessageModel> get onForegroundMessage;
 
   Stream<MessageModel> get onBackroundMessage;
+
+  Stream<MessageModel> get onMessageOpenedApp;
+
+  Future<MessageModel> getInitialMessage();
 }
 
 abstract interface class Analytics extends Service {}
