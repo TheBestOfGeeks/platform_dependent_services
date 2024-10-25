@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:platform_dependent_services/models/message_model.dart';
+import 'package:platform_dependent_services/src/models/message_model.dart';
 
 abstract interface class PlatformDependencies {
   final Core core;
